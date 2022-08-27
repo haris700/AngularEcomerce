@@ -1,0 +1,14 @@
+<div style="padding: 40px; margin-bottom: 20px">
+  <h3><b>Shopping Cart</b></h3>
+  <div>
+    <app-cart-item *ngFor="let cartItem of cartItems" [cartItem]="cartItem">
+    </app-cart-item>
+  </div>
+</div>
+<button
+  mat-stroked-button
+  color="primary"
+  style="float: right; margin-bottom: 50px"
+>
+  Checkout
+</button>

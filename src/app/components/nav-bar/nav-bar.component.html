@@ -1,0 +1,14 @@
+<nav
+  mat-tab-nav-bar
+  mat-align-tabs="end"
+  style="position: sticky; top: 0px; z-index: 999; background: #fff"
+>
+  <a
+    mat-tab-link
+    *ngFor="let link of links"
+    (click)="navigation(link)"
+    [active]="activeLink == link"
+  >
+    {{ link.toUpperCase() }}
+  </a>
+</nav>

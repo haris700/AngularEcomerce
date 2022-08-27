@@ -1,0 +1,31 @@
+<!-- //for image -->
+<div style="display: flex; justify-content: space-between; width: 100%">
+  <div style="display: flex; align-items: center">
+    <img
+      mat-card-image
+      src="{{ cartItem.image }}"
+      height="150px"
+      width="150px"
+      style="object-fit: contain"
+    />
+    <b>{{ cartItem.title }}</b>
+  </div>
+  <div style="display: flex; align-items: center; flex-direction: column">
+    <div style="display: flex; align-items: center">
+      <button mat-flat-button color="accent">-</button>
+      <button mat-flat-button color="primary" style="margin-left: 5px">
+        +
+      </button>
+    </div>
+    <br /><br />
+    <b style="justify-content: center">Quantity: 5</b><br />
+  </div>
+  <button mat-stroked-button color="accent">Delete</button>
+  <div style="margin-top: 200px">Rs.{{ cartItem.price }}</div>
+</div>
+<!-- title -->
+
+<!-- conuter -->
+
+<!-- total -->
+<hr />

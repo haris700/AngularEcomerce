@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angularecomerce-3073f": {
+      "hosting": {
+        "angularecomerce": [
+          "angularecomerce-3073f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angularecomerce-3073f"
+  }
+}

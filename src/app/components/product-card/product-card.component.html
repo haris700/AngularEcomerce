@@ -1,0 +1,17 @@
+<mat-card style="height: 450px;width: 200px;margin: 10px; text-align: center;">
+    <mat-card-title><img mat-card-image src={{product.image}} height="150px" style="object-fit: cover;"></mat-card-title>
+    <mat-card-subtitle style="margin-top: 40px">
+        
+       <h4><b>{{product.title}}</b></h4>
+         Rs.{{product.price}}<br>
+
+    </mat-card-subtitle>
+    <mat-card-actions style="text-align: center;margin-bottom: 70px;">
+        <button (click)="decButton()" mat-flat-button color="accent">-</button>
+        <button (click)="addButton()"  mat-flat-button color="primary" style="margin-left: 5px;">+</button><br><br>
+        <b>Quantity:{{quantity}}</b><br>
+        <button mat-button style="margin-top: 40px;margin-bottom: 10px;" (click)="addToCart(product)">Add To Cart</button>
+        <button mat-button>Order Now</button>
+    </mat-card-actions>
+</mat-card>
+
