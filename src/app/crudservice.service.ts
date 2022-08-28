@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Product } from './pages/home/home.component';
+
 import {
   Firestore,
   collectionData,
   collection,
   addDoc,
-  DocumentData,
+  updateDoc,
+  setDoc,
+  doc,
+  getDocs,
+  collectionSnapshots,
 } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -67,21 +71,27 @@ export class CrudserviceService {
 
   getProducts() {
     const productsCollection = collection(this.store, 'products');
-    return collectionData(productsCollection);
+
+    return getDocs(productsCollection);
   }
 
   addCart(item: Cart) {
-    this.carts.push(item);
-    console.log(this.carts);
-    const cartCollection=collection(this.store,'cart');
-  addDoc(cartCollection,item)
-    
+    const productsCollection = collection(this.store, 'products');
+    getDocs(productsCollection);
+    const cartCollection = collection(this.store, 'cart');
+    addDoc(cartCollection, item);
   }
 
   getCarts() {
-    const cartCollection=collection(this.store,'cart');
-    return collectionData(cartCollection)
+    const cartCollection = collection(this.store, 'cart');
+    return getDocs(cartCollection);
+  }
 
+  updateCart(cartItem: any) {
+    console.log(cartItem);
+
+    const cartDoc = doc(this.store, `cart/${cartItem.docId}`);
+    return updateDoc(cartDoc, { quantity: cartItem.quantity });
   }
 
   constructor(public store: Firestore) {
