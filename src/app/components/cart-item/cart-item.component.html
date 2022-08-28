@@ -1,31 +1,64 @@
 <!-- //for image -->
-<div style="display: flex; justify-content: space-between; width: 100%">
-  <div style="display: flex; align-items: center">
-    <img
-      mat-card-image
-      src="{{ cartItem.image }}"
-      height="150px"
-      width="150px"
-      style="object-fit: contain"
-    />
-    <b>{{ cartItem.title }}</b>
+<div
+  style="
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 10px;
+  "
+>
+  <!-- image div -->
+
+  <div style="display: flex">
+    <img src="{{ cartItem.image }}" width="150px" style="object-fit: cover" />
   </div>
-  <div style="display: flex; align-items: center; flex-direction: column">
+
+  <!-- title, button, quantity, price div-->
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: column;
+      margin-left: 30px;
+    "
+  >
+    <!-- title div -->
+    <div>
+      <b>{{ cartItem.title }}</b>
+    </div>
+
+    <!-- button div -->
     <div style="display: flex; align-items: center">
-      <button mat-flat-button color="accent">-</button>
-      <button mat-flat-button color="primary" style="margin-left: 5px">
+      <button (click)="cartQuantitydec()" mat-stroked-button color="accent">
+        -
+      </button>
+      <button
+        (click)="cartQuantityinc()"
+        mat-stroked-button
+        color="primary"
+        style="margin-left: 5px"
+      >
         +
       </button>
     </div>
-    <br /><br />
-    <b style="justify-content: center">Quantity: 5</b><br />
+
+    <!-- quantity div -->
+    <div>
+      <b>Quantity: {{ cartItem.quantity }}</b>
+    </div>
+    <div>Rs.{{ cartItem.price }}</div>
   </div>
-  <button mat-stroked-button color="accent">Delete</button>
-  <div style="margin-top: 200px">Rs.{{ cartItem.price }}</div>
+  <div style="display: flex; align-items: flex-start">
+    <button mat-stroked-button color="accent">
+      <i class="fa fa-close"></i>
+    </button>
+  </div>
 </div>
 <!-- title -->
 
 <!-- conuter -->
 
 <!-- total -->
-<hr />

@@ -1,14 +1,27 @@
 <div style="padding: 40px; margin-bottom: 20px">
   <h3><b>Shopping Cart</b></h3>
-  <div>
-    <app-cart-item *ngFor="let cartItem of cartItems" [cartItem]="cartItem">
-    </app-cart-item>
+  <div
+    style="display: flex; flex-direction: row; justify-content: space-around"
+  >
+    <div style="width: 50%">
+      <app-cart-item *ngFor="let cartItem of cartItems" [cartItem]="cartItem">
+      </app-cart-item>
+    </div>
+
+    <div
+      style="border: 1px solid #ccc; width: 30%; height: 250px; padding: 20px"
+    >
+      <p><b>Price Details</b></p>
+
+      <p>Total MRP</p>
+      <p>Discount on MRP</p>
+
+      <p>Coupoun Discount</p>
+      <hr />
+      <p><b>Cart Total </b></p>
+      <button mat-stroked-button color="primary" style="width: 100%">
+        PLACE OREDR
+      </button>
+    </div>
   </div>
 </div>
-<button
-  mat-stroked-button
-  color="primary"
-  style="float: right; margin-bottom: 50px"
->
-  Checkout
-</button>
